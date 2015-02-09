@@ -14,6 +14,7 @@
 		8A0C44951A88656600AF8CAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44941A88656600AF8CAE /* Images.xcassets */; };
 		8A0C44981A88656600AF8CAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44961A88656600AF8CAE /* LaunchScreen.xib */; };
 		8A0C44A41A88656600AF8CAE /* Active_AlarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44A31A88656600AF8CAE /* Active_AlarmTests.m */; };
+		8A0C44B11A886B2900AF8CAE /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44B01A886B2900AF8CAE /* SetAlarmViewController.m */; };
 		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		8A0C449D1A88656600AF8CAE /* Active AlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Active AlarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0C44A21A88656600AF8CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A0C44A31A88656600AF8CAE /* Active_AlarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Active_AlarmTests.m; sourceTree = "<group>"; };
+		8A0C44AF1A886B2900AF8CAE /* SetAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAlarmViewController.h; sourceTree = "<group>"; };
+		8A0C44B01A886B2900AF8CAE /* SetAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetAlarmViewController.m; sourceTree = "<group>"; };
 		9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +88,8 @@
 		8A0C44831A88656600AF8CAE /* Active Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				8A0C44AF1A886B2900AF8CAE /* SetAlarmViewController.h */,
+				8A0C44B01A886B2900AF8CAE /* SetAlarmViewController.m */,
 				8A0C44911A88656600AF8CAE /* Main.storyboard */,
 				8A0C44941A88656600AF8CAE /* Images.xcassets */,
 				8A0C44961A88656600AF8CAE /* LaunchScreen.xib */,
@@ -241,6 +246,7 @@
 				8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */,
 				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
+				8A0C44B11A886B2900AF8CAE /* SetAlarmViewController.m in Sources */,
 				8A0C44871A88656600AF8CAE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
