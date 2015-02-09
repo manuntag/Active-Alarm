@@ -14,6 +14,7 @@
 		8A0C44951A88656600AF8CAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44941A88656600AF8CAE /* Images.xcassets */; };
 		8A0C44981A88656600AF8CAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44961A88656600AF8CAE /* LaunchScreen.xib */; };
 		8A0C44A41A88656600AF8CAE /* Active_AlarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44A31A88656600AF8CAE /* Active_AlarmTests.m */; };
+		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,8 @@
 		8A0C449D1A88656600AF8CAE /* Active AlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Active AlarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0C44A21A88656600AF8CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A0C44A31A88656600AF8CAE /* Active_AlarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Active_AlarmTests.m; sourceTree = "<group>"; };
+		9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 		8A0C44AE1A88676F00AF8CAE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */,
+				9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */,
+				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
 				8A0C44871A88656600AF8CAE /* main.m in Sources */,
 			);
@@ -426,6 +432,7 @@
 				8A0C44A91A88656600AF8CAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A0C44AA1A88656600AF8CAE /* Build configuration list for PBXNativeTarget "Active AlarmTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +441,7 @@
 				8A0C44AC1A88656600AF8CAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
