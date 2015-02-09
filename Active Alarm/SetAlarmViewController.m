@@ -10,9 +10,17 @@
 
 @interface SetAlarmViewController ()
 
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic) IBOutlet UITextField *messageTextField;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
+
 @end
 
 @implementation SetAlarmViewController
+- (IBAction)saveButton:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

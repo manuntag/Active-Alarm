@@ -1,5 +1,5 @@
 //
-//  SetAlarmViewController.h
+//  HomeViewController.h
 //  Active Alarm
 //
 //  Created by David Manuntag on 2015-02-08.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetAlarmViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
-
+@interface HomeViewController : UIViewController
 
 @end
