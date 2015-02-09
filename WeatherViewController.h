@@ -11,7 +11,4 @@
 @interface WeatherViewController :UIViewController
 
 
-// APPID (API key) 661f094a82f7a18eadafba070c01d2bd
-//http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=661f094a82f7a18eadafba070c01d2bd
-
 @end

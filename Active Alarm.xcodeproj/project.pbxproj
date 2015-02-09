@@ -17,6 +17,7 @@
 		8A0C44B11A886B2900AF8CAE /* SetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44B01A886B2900AF8CAE /* SetAlarmViewController.m */; };
 		8A0C44B51A8872BF00AF8CAE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44B41A8872BF00AF8CAE /* HomeViewController.m */; };
 		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
+		9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A7971A88B5B3004F7B9C /* WeatherData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		8A0C44B41A8872BF00AF8CAE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		9F44A7961A88B5B3004F7B9C /* WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherData.h; sourceTree = "<group>"; };
+		9F44A7971A88B5B3004F7B9C /* WeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 			children = (
 				9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */,
 				9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */,
+				9F44A7961A88B5B3004F7B9C /* WeatherData.h */,
+				9F44A7971A88B5B3004F7B9C /* WeatherData.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
 				8A0C44B11A886B2900AF8CAE /* SetAlarmViewController.m in Sources */,
+				9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */,
 				8A0C44871A88656600AF8CAE /* main.m in Sources */,
 				8A0C44B51A8872BF00AF8CAE /* HomeViewController.m in Sources */,
 			);
