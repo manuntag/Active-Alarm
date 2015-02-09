@@ -10,7 +10,6 @@
 		8A0C44871A88656600AF8CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44861A88656600AF8CAE /* main.m */; };
 		8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44891A88656600AF8CAE /* AppDelegate.m */; };
 		8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C448B1A88656600AF8CAE /* Active_Alarm.xcdatamodeld */; };
-		8A0C44901A88656600AF8CAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C448F1A88656600AF8CAE /* ViewController.m */; };
 		8A0C44931A88656600AF8CAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44911A88656600AF8CAE /* Main.storyboard */; };
 		8A0C44951A88656600AF8CAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44941A88656600AF8CAE /* Images.xcassets */; };
 		8A0C44981A88656600AF8CAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C44961A88656600AF8CAE /* LaunchScreen.xib */; };
@@ -34,8 +33,6 @@
 		8A0C44881A88656600AF8CAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A0C44891A88656600AF8CAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8A0C448C1A88656600AF8CAE /* Active_Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Active_Alarm.xcdatamodel; sourceTree = "<group>"; };
-		8A0C448E1A88656600AF8CAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8A0C448F1A88656600AF8CAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8A0C44921A88656600AF8CAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A0C44941A88656600AF8CAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A0C44971A88656600AF8CAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,6 +62,8 @@
 		8A0C44781A88656600AF8CAE = {
 			isa = PBXGroup;
 			children = (
+				8A0C44AE1A88676F00AF8CAE /* Weather */,
+				8A0C44AD1A88676600AF8CAE /* Core Data */,
 				8A0C44831A88656600AF8CAE /* Active Alarm */,
 				8A0C44A01A88656600AF8CAE /* Active AlarmTests */,
 				8A0C44821A88656600AF8CAE /* Products */,
@@ -83,10 +82,6 @@
 		8A0C44831A88656600AF8CAE /* Active Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				8A0C44881A88656600AF8CAE /* AppDelegate.h */,
-				8A0C44891A88656600AF8CAE /* AppDelegate.m */,
-				8A0C448E1A88656600AF8CAE /* ViewController.h */,
-				8A0C448F1A88656600AF8CAE /* ViewController.m */,
 				8A0C44911A88656600AF8CAE /* Main.storyboard */,
 				8A0C44941A88656600AF8CAE /* Images.xcassets */,
 				8A0C44961A88656600AF8CAE /* LaunchScreen.xib */,
@@ -99,6 +94,8 @@
 		8A0C44841A88656600AF8CAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8A0C44881A88656600AF8CAE /* AppDelegate.h */,
+				8A0C44891A88656600AF8CAE /* AppDelegate.m */,
 				8A0C44851A88656600AF8CAE /* Info.plist */,
 				8A0C44861A88656600AF8CAE /* main.m */,
 			);
@@ -120,6 +117,20 @@
 				8A0C44A21A88656600AF8CAE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A0C44AD1A88676600AF8CAE /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		8A0C44AE1A88676F00AF8CAE /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +235,6 @@
 			files = (
 				8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
-				8A0C44901A88656600AF8CAE /* ViewController.m in Sources */,
 				8A0C44871A88656600AF8CAE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
