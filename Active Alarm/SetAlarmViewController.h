@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetAlarmViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SetAlarmViewController : UIViewController
 
 
 

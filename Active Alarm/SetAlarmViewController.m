@@ -10,27 +10,50 @@
 
 @interface SetAlarmViewController ()
 
-@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (strong, nonatomic) IBOutlet UITextField *messageTextField;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
-
+@property (nonatomic, strong) NSDate * time;
 
 @end
 
 @implementation SetAlarmViewController
+
+- (IBAction)datePicker:(UIDatePicker *)sender {
+    
+    self.time = sender.date;
+    NSLog(@"Alarm will go off at %@", self.time);
+    
+}
+
 - (IBAction)saveButton:(id)sender {
+    
+    
+    //register notifications
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings * mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication]registerUserNotificationSettings:mySettings];
+    
+    
+    //create and save local notification
+    
+    UILocalNotification * localNotification = [[UILocalNotification alloc]init];
+    localNotification.fireDate = self.time;
+    localNotification.alertBody = [NSString stringWithFormat:@"Alert Fired at %@", self.time];
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication]scheduleLocalNotification:localNotification];
+    
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 /*
 #pragma mark - Navigation
