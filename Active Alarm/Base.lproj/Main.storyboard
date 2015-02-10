@@ -64,11 +64,89 @@
                     </navigationItem>
                     <connections>
                         <outlet property="clockLabel" destination="PkJ-IQ-Qfm" id="TT1-1N-b7d"/>
+                        <segue destination="icR-k6-lxN" kind="presentation" identifier="gameOneSegue" id="TtW-nl-0Hv"/>
+                        <segue destination="dIu-Zz-mCU" kind="presentation" identifier="gameTwoSegue" id="peo-mA-Wfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCU-Gb-vBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="933" y="243"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MUI-iF-HOa">
+            <objects>
+                <viewController id="icR-k6-lxN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iyu-eK-0PE"/>
+                        <viewControllerLayoutGuide type="bottom" id="zE8-XR-cfP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="63d-Cw-5xg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="863-Tr-E3n">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="167" y="147" width="66" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="863-Tr-E3n"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="863-Tr-E3n"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxh-nS-8zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="990"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GNt-ij-ei7">
+            <objects>
+                <viewController id="dIu-Zz-mCU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F6d-Mu-8g2"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKf-de-hh3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="af5-yn-W33">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKL-uO-Yiu">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="170" y="152" width="61" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dKL-uO-Yiu"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dKL-uO-Yiu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ix6-pd-XIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="990"/>
         </scene>
         <!--Set Alarm View Controller-->
         <scene sceneID="rxo-f5-qWX">
@@ -225,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhV-6X-JZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="243"/>
+            <point key="canvasLocation" x="1804.5" y="243"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tzq-lQ-MM3">

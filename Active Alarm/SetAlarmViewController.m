@@ -92,7 +92,6 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    NSMutableArray * mutableNotificationArray = [self.notificationArray mutableCopy];
     NSMutableArray * mutableNotificationArray = [NSMutableArray arrayWithArray:self.notificationArray];
     
     UILocalNotification *deletedNotification = self.notificationArray[indexPath.row];
@@ -105,11 +104,7 @@
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [tableView endUpdates];
     
-    
 }
-
-
-
 
 /*
 #pragma mark - Navigation
