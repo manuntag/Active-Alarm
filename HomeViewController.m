@@ -20,10 +20,7 @@
     
     [self updateCurrentTime];
     
-    
 }
-
-
 
 -(void)updateCurrentTime {
     
