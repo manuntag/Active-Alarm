@@ -81,6 +81,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zE8-XR-cfP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="63d-Cw-5xg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="863-Tr-E3n">
@@ -119,6 +120,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKf-de-hh3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="af5-yn-W33">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKL-uO-Yiu">

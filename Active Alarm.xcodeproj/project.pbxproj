@@ -19,6 +19,8 @@
 		8A5DFB3C1A8A937400B3A99B /* cudi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A5DFB3B1A8A937400B3A99B /* cudi.wav */; };
 		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
 		9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A7971A88B5B3004F7B9C /* WeatherData.m */; };
+		9F44A82B1A8AEBA1004F7B9C /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */; };
+		9F44A82E1A8AEC9E004F7B9C /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A82D1A8AEC9E004F7B9C /* Alarm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		9F44A7961A88B5B3004F7B9C /* WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherData.h; sourceTree = "<group>"; };
 		9F44A7971A88B5B3004F7B9C /* WeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherData.m; sourceTree = "<group>"; };
+		9F44A8291A8AEBA1004F7B9C /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		9F44A82C1A8AEC9E004F7B9C /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		9F44A82D1A8AEC9E004F7B9C /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +145,11 @@
 		8A0C44AD1A88676600AF8CAE /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				9F44A8291A8AEBA1004F7B9C /* CoreDataStack.h */,
+				9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */,
 				8A0C448B1A88656600AF8CAE /* Active_Alarm.xcdatamodeld */,
+				9F44A82C1A8AEC9E004F7B9C /* Alarm.h */,
+				9F44A82D1A8AEC9E004F7B9C /* Alarm.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -268,6 +278,8 @@
 				8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */,
 				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
+				9F44A82E1A8AEC9E004F7B9C /* Alarm.m in Sources */,
+				9F44A82B1A8AEBA1004F7B9C /* CoreDataStack.m in Sources */,
 				8A0C44B11A886B2900AF8CAE /* SetAlarmViewController.m in Sources */,
 				9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */,
 				8A0C44871A88656600AF8CAE /* main.m in Sources */,
