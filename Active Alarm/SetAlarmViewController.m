@@ -147,20 +147,17 @@
     
 }
 
--(void)insertToDoItem
-{
-    CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
-    Alarm *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Alarm" inManagedObjectContext:coreDataStack.managedObjectContext];
-    //    alarm.fireDate = self.fireDate;
-    //    alarm.alertBody = [self.textField text];
-    //    alarm.soundName = @"cudi.wav";
-    //
-    
-    [coreDataStack saveContext];
-}
-
 - (IBAction)saveButton:(id)sender {
     [self.textField resignFirstResponder];
+    
+    
+    //register notifications
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings * mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication]registerUserNotificationSettings:mySettings];
+    
     
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
     
@@ -171,10 +168,22 @@
     alarm.alertBody = [self.textField text];
     alarm.soundName = @"cudi.wav";
     
+    
+    //create and save local notification
+    
+    self.localNotification = [[UILocalNotification alloc]init];
+    self.localNotification.fireDate = alarm.fireDate;
+    self.localNotification.alertBody = alarm.alertBody;
+    self.localNotification.soundName = alarm.soundName;
+    self.localNotification.applicationIconBadgeNumber = 1;
+    self.localNotification.repeatInterval = 0;
+    [[UIApplication sharedApplication]scheduleLocalNotification:self.localNotification];
+    
+    
+    
     [coreDataStack saveContext];
     
     [self.tableView reloadData];
-    
     
 }
 
@@ -206,6 +215,8 @@
     NSDateFormatter * detailTimeFormat = [[NSDateFormatter alloc]init];
     [detailTimeFormat setDateFormat:@"EEEE h:mm a"];
     cell.detailTextLabel.text = [detailTimeFormat stringFromDate:alarm.fireDate];
+    
+    [tableView reloadData]; 
     
     return cell;
     

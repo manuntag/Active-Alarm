@@ -24,6 +24,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwU-9F-OPz">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="325" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="yji-HX-wd7" eventType="touchUpInside" id="4ZS-V8-ehp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -35,6 +47,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="PkJ-IQ-Qfm"/>
+                                <exclude reference="IwU-9F-OPz"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4Kw-2K-un3"/>
@@ -46,6 +59,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="PkJ-IQ-Qfm"/>
+                                <include reference="IwU-9F-OPz"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4Kw-2K-un3"/>
@@ -64,18 +78,18 @@
                     </navigationItem>
                     <connections>
                         <outlet property="clockLabel" destination="PkJ-IQ-Qfm" id="TT1-1N-b7d"/>
-                        <segue destination="icR-k6-lxN" kind="presentation" identifier="gameOneSegue" id="TtW-nl-0Hv"/>
-                        <segue destination="dIu-Zz-mCU" kind="presentation" identifier="gameTwoSegue" id="peo-mA-Wfp"/>
+                        <segue destination="icR-k6-lxN" kind="presentation" identifier="mathGameSegue" id="TtW-nl-0Hv"/>
+                        <segue destination="dIu-Zz-mCU" kind="presentation" identifier="dotGameSegue" id="peo-mA-Wfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCU-Gb-vBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="933" y="243"/>
         </scene>
-        <!--View Controller-->
+        <!--Game One View Controller-->
         <scene sceneID="MUI-iF-HOa">
             <objects>
-                <viewController id="icR-k6-lxN" sceneMemberID="viewController">
+                <viewController id="icR-k6-lxN" customClass="GameOneViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iyu-eK-0PE"/>
                         <viewControllerLayoutGuide type="bottom" id="zE8-XR-cfP"/>
@@ -111,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="600" y="990"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Two View Controller-->
         <scene sceneID="GNt-ij-ei7">
             <objects>
-                <viewController id="dIu-Zz-mCU" sceneMemberID="viewController">
+                <viewController id="dIu-Zz-mCU" customClass="GameTwoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F6d-Mu-8g2"/>
                         <viewControllerLayoutGuide type="bottom" id="FKf-de-hh3"/>
