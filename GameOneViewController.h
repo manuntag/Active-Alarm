@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameViewControllerType.h"
 
-@interface GameOneViewController : UIViewController
-
+@interface GameOneViewController : UIViewController <GameViewControllerType>
+@property (nonatomic, strong) Game *game;
 @end

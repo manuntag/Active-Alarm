@@ -171,13 +171,13 @@
     
     //create and save local notification
     
-    UILocalNotification * localNotification = [[UILocalNotification alloc]init];
-    localNotification.fireDate = alarm.fireDate;
-    localNotification.alertBody = alarm.alertBody;
-    localNotification.soundName = alarm.soundName;
-    localNotification.applicationIconBadgeNumber = 1;
-    localNotification.repeatInterval = 0;
-    [[UIApplication sharedApplication]scheduleLocalNotification:localNotification];
+    self.localNotification = [[UILocalNotification alloc]init];
+    self.localNotification.fireDate = alarm.fireDate;
+    self.localNotification.alertBody = alarm.alertBody;
+    self.localNotification.soundName = alarm.soundName;
+    self.localNotification.applicationIconBadgeNumber = 1;
+    self.localNotification.repeatInterval = 0;
+    [[UIApplication sharedApplication]scheduleLocalNotification:self.localNotification];
     
     
     
