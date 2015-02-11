@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A020FF11A8B007E00CA97E1 /* GameOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A020FF01A8B007E00CA97E1 /* GameOneViewController.m */; };
+		8A020FF41A8B008C00CA97E1 /* GameTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A020FF31A8B008C00CA97E1 /* GameTwoViewController.m */; };
 		8A0C44871A88656600AF8CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44861A88656600AF8CAE /* main.m */; };
 		8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44891A88656600AF8CAE /* AppDelegate.m */; };
 		8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C448B1A88656600AF8CAE /* Active_Alarm.xcdatamodeld */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A020FEF1A8B007E00CA97E1 /* GameOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOneViewController.h; sourceTree = "<group>"; };
+		8A020FF01A8B007E00CA97E1 /* GameOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOneViewController.m; sourceTree = "<group>"; };
+		8A020FF21A8B008C00CA97E1 /* GameTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTwoViewController.h; sourceTree = "<group>"; };
+		8A020FF31A8B008C00CA97E1 /* GameTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTwoViewController.m; sourceTree = "<group>"; };
 		8A0C44811A88656600AF8CAE /* Active Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Active Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0C44851A88656600AF8CAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A0C44861A88656600AF8CAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,9 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A020FEE1A8B005B00CA97E1 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				8A020FEF1A8B007E00CA97E1 /* GameOneViewController.h */,
+				8A020FF01A8B007E00CA97E1 /* GameOneViewController.m */,
+				8A020FF21A8B008C00CA97E1 /* GameTwoViewController.h */,
+				8A020FF31A8B008C00CA97E1 /* GameTwoViewController.m */,
+			);
+			name = Challenges;
+			sourceTree = "<group>";
+		};
 		8A0C44781A88656600AF8CAE = {
 			isa = PBXGroup;
 			children = (
+				8A020FEE1A8B005B00CA97E1 /* Challenges */,
 				8A5DFB3B1A8A937400B3A99B /* cudi.wav */,
 				8A0C44911A88656600AF8CAE /* Main.storyboard */,
 				8A0C44B21A88728C00AF8CAE /* Home */,
@@ -279,7 +297,9 @@
 				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
 				9F44A82E1A8AEC9E004F7B9C /* Alarm.m in Sources */,
+				8A020FF41A8B008C00CA97E1 /* GameTwoViewController.m in Sources */,
 				9F44A82B1A8AEBA1004F7B9C /* CoreDataStack.m in Sources */,
+				8A020FF11A8B007E00CA97E1 /* GameOneViewController.m in Sources */,
 				8A0C44B11A886B2900AF8CAE /* SetAlarmViewController.m in Sources */,
 				9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */,
 				8A0C44871A88656600AF8CAE /* main.m in Sources */,

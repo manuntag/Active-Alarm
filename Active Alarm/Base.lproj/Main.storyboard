@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="933" y="243"/>
         </scene>
-        <!--View Controller-->
+        <!--Game One View Controller-->
         <scene sceneID="MUI-iF-HOa">
             <objects>
-                <viewController id="icR-k6-lxN" sceneMemberID="viewController">
+                <viewController id="icR-k6-lxN" customClass="GameOneViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iyu-eK-0PE"/>
                         <viewControllerLayoutGuide type="bottom" id="zE8-XR-cfP"/>
@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="600" y="990"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Two View Controller-->
         <scene sceneID="GNt-ij-ei7">
             <objects>
-                <viewController id="dIu-Zz-mCU" sceneMemberID="viewController">
+                <viewController id="dIu-Zz-mCU" customClass="GameTwoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F6d-Mu-8g2"/>
                         <viewControllerLayoutGuide type="bottom" id="FKf-de-hh3"/>
