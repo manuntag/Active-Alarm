@@ -28,7 +28,6 @@
     
     [super viewDidLoad];
     [self.fetchedResultsController performFetch:nil];
-    [self.tableView reloadData];
 }
 
 - (NSManagedObjectContext*)managedObjectContext
@@ -58,17 +57,10 @@
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:@"Alarms"];
     _fetchedResultsController.delegate = self;
     
-    /*
-     if (_fetchedResultsController != nil) {
-     return _fetchedResultsController;
-     }
-     
-     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
-     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
      
      // Edit the entity name as appropriate.
      NSEntityDescription *entity = [NSEntityDescription entityForName:@"Alarm" inManagedObjectContext:self.managedObjectContext];
-     [scheduledAlarmsFetchRequest setEntity:entity];
+     [fetchRequest setEntity:entity];
      
      // Set the batch size to a suitable number.
      [fetchRequest setFetchBatchSize:20];
@@ -84,7 +76,7 @@
      NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Alarms"];
      aFetchedResultsController.delegate = self;
      self.fetchedResultsController = aFetchedResultsController;
-     */
+    
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -111,6 +103,8 @@
     
     else if (type == NSFetchedResultsChangeDelete)
     {
+        Alarm *alarm = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self deRegisterAlarm:alarm];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         return;
     }
@@ -132,6 +126,8 @@
             break;
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+        default:
+            return;
     }
 }
 
@@ -147,17 +143,42 @@
     
 }
 
+- (void)registerAlarm:(Alarm*)alarm
+{
+    //create and save local notification
+    UILocalNotification * localNotification = [[UILocalNotification alloc]init];
+    localNotification.fireDate = alarm.fireDate;
+    localNotification.alertBody = alarm.alertBody;
+    localNotification.soundName = alarm.soundName;
+    localNotification.applicationIconBadgeNumber = 1;
+    localNotification.repeatInterval = 0;
+    alarm.localNotification = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
+    if ([[CoreDataStack defaultStack] saveContextWithError:nil])
+    {
+        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        
+        UIUserNotificationSettings * mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication]registerUserNotificationSettings:mySettings];
+        
+        [[UIApplication sharedApplication]scheduleLocalNotification:localNotification];
+    }
+}
+
+- (void)deRegisterAlarm:(Alarm*)alarm
+{
+    if (alarm.localNotification != nil)
+    {
+        UILocalNotification * localNotification = [NSKeyedUnarchiver unarchiveObjectWithData:alarm.localNotification];
+        
+        if (localNotification != nil)
+        {
+            [[UIApplication sharedApplication] cancelLocalNotification:localNotification];
+        }
+    }
+}
+
 - (IBAction)saveButton:(id)sender {
     [self.textField resignFirstResponder];
-    
-    
-    //register notifications
-    
-    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-    
-    UIUserNotificationSettings * mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-    [[UIApplication sharedApplication]registerUserNotificationSettings:mySettings];
-    
     
     CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
     
@@ -168,35 +189,25 @@
     alarm.alertBody = [self.textField text];
     alarm.soundName = @"cudi.wav";
     
-    
-    //create and save local notification
-    
-    self.localNotification = [[UILocalNotification alloc]init];
-    self.localNotification.fireDate = alarm.fireDate;
-    self.localNotification.alertBody = alarm.alertBody;
-    self.localNotification.soundName = alarm.soundName;
-    self.localNotification.applicationIconBadgeNumber = 1;
-    self.localNotification.repeatInterval = 0;
-    [[UIApplication sharedApplication]scheduleLocalNotification:self.localNotification];
-    
-    
-    
-    [coreDataStack saveContext];
-    
-    [self.tableView reloadData];
-    
+
+    NSError *error = nil;
+    if ([coreDataStack saveContextWithError:error] == YES)
+    {
+        [self registerAlarm:alarm];
+    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return self.fetchedResultsController.sections.count;
+    return [[self.fetchedResultsController sections] count];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
-    
-    return [sectionInfo numberOfObjects];
+    NSUInteger numberOfObjects = [sectionInfo numberOfObjects];
+    NSLog(@"numberOfObjects: %ld",numberOfObjects);
+    return numberOfObjects;
     
 }
 
@@ -215,9 +226,6 @@
     NSDateFormatter * detailTimeFormat = [[NSDateFormatter alloc]init];
     [detailTimeFormat setDateFormat:@"EEEE h:mm a"];
     cell.detailTextLabel.text = [detailTimeFormat stringFromDate:alarm.fireDate];
-    
-    [tableView reloadData]; 
-    
     return cell;
     
 }
@@ -248,5 +256,7 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+
 
 @end

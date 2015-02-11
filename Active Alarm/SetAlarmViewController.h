@@ -14,6 +14,4 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
-@property (strong, nonatomic) UILocalNotification * localNotification;
-
 @end
