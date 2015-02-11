@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "GameViewControllerType.h"
 
-@interface GameOneViewController : UIViewController <GameViewControllerType>
+@interface GameOneViewController : UIViewController <GameViewControllerType, UICollisionBehaviorDelegate>
+
 @property (nonatomic, strong) Game *game;
+
+
+
+
+
+
 @end

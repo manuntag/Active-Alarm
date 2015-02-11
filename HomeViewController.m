@@ -50,6 +50,9 @@
 
 - (IBAction)buttonTapped:(id)sender {
     self.randomGame = [self.gamesArray objectAtIndex:arc4random()%self.gamesArray.count];
+    
+    //#todo - change this (testing purposes)
+    self.randomGame = self.gamesArray[0];
     self.segueIdentifier = self.randomGame.gameType;
     [self performSegueWithIdentifier:self.segueIdentifier sender:self];
 }
