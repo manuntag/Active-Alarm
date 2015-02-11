@@ -213,23 +213,7 @@
 
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-<<<<<<< HEAD
-    
-    NSMutableArray * mutableNotificationArray = [NSMutableArray arrayWithArray:self.notificationArray];
-    
-    UILocalNotification *deletedNotification = self.notificationArray[indexPath.row];
-    [UIApplication.sharedApplication cancelLocalNotification:deletedNotification];
-    
-    [mutableNotificationArray removeObjectAtIndex:indexPath.row];
-    
-    [tableView beginUpdates];
-    self.notificationArray = mutableNotificationArray;
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [tableView endUpdates];
-    
-}
 
-=======
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
@@ -244,8 +228,6 @@
     }
 }
 
-
->>>>>>> 26a28bb2ab5d7e7b6c62800d7ec2bdcb5224a92e
 /*
  #pragma mark - Navigation
  
