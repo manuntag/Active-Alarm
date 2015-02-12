@@ -19,8 +19,8 @@
 
 -(int)randomMathQuestion {
     
-    self.number1 = arc4random()%10;
-    self.number2 = arc4random()%10;
+    self.number1 = arc4random()%25;
+    self.number2 = arc4random()%25;
     
     self.answer = self.number1 + self.number2;
     
@@ -34,7 +34,7 @@
     self.number1String = [spellOutNumberFormat stringFromNumber:nsNumber1];
     self.number2String = [spellOutNumberFormat stringFromNumber:nsNumber2];
     
-    self.mathQuestion = [NSString stringWithFormat:@"%@\n+\n%@?", self.number1String, self.number1String];
+    self.mathQuestion = [NSString stringWithFormat:@"%@\n+\n%@", self.number1String, self.number2String];
     
     return self.answer;
     
@@ -47,19 +47,14 @@
     
     if(correctAnswer==userAnswer) {
         
-        self.userScore++;
+        pass = YES;
         
     }else {
         
-        self.userScore--;
+        pass = NO;
         
     }
     
-    if(self.userScore>3) {
-    
-        pass = YES;
-
-    }
     return pass;
     
 }

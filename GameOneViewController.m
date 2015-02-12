@@ -16,7 +16,15 @@
 
 
 @interface GameOneViewController ()
-@property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
+
+@property (nonatomic) CGRect dot;
+@property (nonatomic, strong) UIView *dotView;
+@property (nonatomic, strong) UIImageView *dotImgView;
+//@property (nonatomic) CGRect dotFrame;
+
+@property (nonatomic) CGPoint dotLocation;
+@property (nonatomic) CGPoint dotSize;
+@property (nonatomic) CGRect current;
 @end
 
 @implementation GameOneViewController
@@ -30,11 +38,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
     
-    // Do any additional setup after loading the view.
+    // initial location in center of view
+
+    /// location: (x,y) = (100,100) width=20 height=20
+    
+    if (!self.dotView)
+    {
+        [self setInitialConfiguration];
+        [self.view addSubview:self.dotView];
+         self.dotView.center = CGPointMake(1, 1);
+    }
+    
+    // Location of the center of the square in the view.
+    CGPoint startPosition = CGPointMake(self.view.center.x, self.view.center.y);
+    [self startAtLocation:startPosition];
 }
 
+
+- (void) setInitialConfiguration
+{
+    self.dotSize = CGPointMake(20,20);
+    // initial location of the dot in the center of the view
+    CGPoint startPosition = CGPointMake(self.view.center.x, self.view.center.y);
+    self.dotLocation = startPosition;
+    
+    CGRect dotViewFrame = CGRectMake(self.dotLocation.x,self.dotLocation.y,20,20);
+    
+    self.dotView = [[UIView alloc] initWithFrame:dotViewFrame];
+    self.dotView.backgroundColor = [UIColor blackColor];
+    
+    
+    
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 -(void)startAtLocation:(CGPoint)initialPosition
 {

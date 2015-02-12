@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "GameViewControllerType.h"
-#import "Alarm.h"
-#import "SetAlarmViewController.h"
 
 @interface GameOneViewController : UIViewController <GameViewControllerType>
-
 @property (nonatomic, strong) Game *game;
 
 
+
+
+
+
 @end
-
-
