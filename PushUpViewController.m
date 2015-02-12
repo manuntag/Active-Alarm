@@ -16,9 +16,19 @@
 @implementation PushUpViewController
 - (IBAction)pushUpButton:(id)sender {
 
+    if (self.pushUpCount>=5) {
+        
+        
+        [self performSegueWithIdentifier:@"waldoSegue" sender:self];
+        
+        
+    }
+    
     self.pushUpCount++;
     
     self.pushUpCountLabel.text = [NSString  stringWithFormat:@"%d", self.pushUpCount];
+    
+    
     
 }
 

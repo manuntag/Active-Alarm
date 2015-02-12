@@ -20,9 +20,43 @@
 @property (strong, nonatomic) NSMutableArray * gamesArray;
 @property (strong, nonatomic) NSString * segueIdentifier ;
 @property (nonatomic, strong) Game *randomGame;
+
+
+@property (strong, nonatomic) IBOutlet UIView *greenSwipeView;
+
+@property (strong, nonatomic) IBOutlet UIView *blueSwipeView;
+
+
+
 @end
 
 @implementation HomeViewController
+
+
+-(void)slideToRightWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
+    
+    
+  [UIView animateWithDuration:3.0 animations:^{
+      
+      
+      self.blueSwipeView.frame = CGRectOffset(self.blueSwipeView.frame, 320.0, 0);
+//      self.greenSwipeView.frame = CGRectOffset(self.greenSwipeView.frame, 320.0, 0);
+      
+      
+  }];
+    
+    
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(goToMath) userInfo:nil repeats:NO];
+    
+}
+
+     -(void)goToMath {
+         
+         [self performSegueWithIdentifier:@"mathSegue" sender:self];
+         
+     }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +67,12 @@
     
     [self loadGames];
     
+    UISwipeGestureRecognizer * blueSwipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(slideToRightWithGestureRecognizer:)];
+    blueSwipeRight.direction = UISwipeGestureRecognizerDirectionRight;
 
+    
+    [self.blueSwipeView addGestureRecognizer:blueSwipeRight];
+    
 }
 
 
