@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6735" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Alarm" representedClassName="Alarm" syncable="YES">
         <attribute name="alertBody" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="localNotification" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="soundName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Alarm" positionX="-5049" positionY="-2907" width="128" height="118"/>
     </elements>
 </model>

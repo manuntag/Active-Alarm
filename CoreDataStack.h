@@ -17,7 +17,7 @@
 
 
 + (instancetype) defaultStack;
-- (void)saveContext;
+- (BOOL)saveContextWithError:(NSError*)error;
 - (NSURL *)applicationDocumentsDirectory;
 
 @end
