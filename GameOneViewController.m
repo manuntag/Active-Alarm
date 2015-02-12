@@ -10,6 +10,7 @@
 //  Copyright (c) 2015 David Manuntag. All rights reserved.
 //
 
+///
 
 #import "GameOneViewController.h"
 
@@ -64,15 +65,21 @@
     
 }
 
--(void)startAtLocation:(CGPoint)initialPosition
+-(CGPoint)randomLocation
 {
     CGFloat xrand = arc4random_uniform(self.view.bounds.size.width);
     CGFloat yrand = arc4random_uniform(self.view.bounds.size.height);
-    CGPoint finalPositon = CGPointMake(xrand, yrand);
+    return CGPointMake(xrand, yrand);
+}
+
+-(void)startAtLocation:(CGPoint)initialPosition
+{
     
-    [UIView animateWithDuration:5
+    CGPoint finalPositon = [self randomLocation];
+    
+    [UIView animateWithDuration:1
                           delay:0
-                        options:UIViewAnimationCurveLinear | UIViewAnimationOptionRepeat | UIViewAnimationOptionAllowUserInteraction
+                        options:UIViewAnimationCurveLinear | UIViewAnimationOptionRepeat | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
                          self.dotView.center = initialPosition;
                      }

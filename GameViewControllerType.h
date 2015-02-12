@@ -10,4 +10,6 @@
 
 @protocol GameViewControllerType
 - (void)setGame:(Game *)game;
+
+//- (void)
 @end

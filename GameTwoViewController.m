@@ -61,8 +61,8 @@
 
 - (CGPoint) randomPoint
 {
-    CGFloat xrand = arc4random_uniform(self.view.bounds.size.width);
-    CGFloat yrand = arc4random_uniform(self.view.bounds.size.height);
+    CGFloat xrand = arc4random_uniform(self.view.bounds.size.width-self.dotImageView.frame.size.width);
+    CGFloat yrand = arc4random_uniform(self.view.bounds.size.height-self.dotImageView.frame.size.width);
     
     return CGPointMake(xrand, yrand);
 }
