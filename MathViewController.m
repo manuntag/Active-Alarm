@@ -35,13 +35,11 @@
         self.mathgame.answer = [self.mathgame randomMathQuestion];
         self.mathQuestionLabel.text = self.mathgame.mathQuestion;
         
-        if (self.mathgame.userScore>3){
+        if (self.mathgame.userScore>=3){
             
-            
-            
+            [self performSegueWithIdentifier:@"pushUpSegue" sender:self];
             
         }
-        
         
     }else if (!checkAnswer) {
         
@@ -52,7 +50,6 @@
         self.mathQuestionLabel.text = self.mathgame.mathQuestion;
         
     }
-    
     
 }
 
