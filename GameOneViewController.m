@@ -1,6 +1,5 @@
 //
 //  GameOneViewController.m
-//
 /// The whole point is to sustain the users attention for x minutes to ensure they are in fact awake.
 /// must receive touch events that match with the dots location at a given time for a duration of x minutes.
 /// if user has not responded with a tap in a correct location of the object then it is assumed that the user fell back asleep and the notification/sound/alarm will continue until the attention test has been passed
@@ -16,10 +15,21 @@
 
 
 @interface GameOneViewController ()
+
 @property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
+
+@property (nonatomic) CGRect dot;
+@property (nonatomic, strong) UIView *dotView;
+
+//@property (nonatomic) CGRect dotFrame;
+@property (nonatomic) CGPoint dotLocation;
+@property (nonatomic) CGPoint dotSize;
+@property (nonatomic) CGRect current;
+
 @end
 
 @implementation GameOneViewController
+
 - (IBAction)offButton:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -30,11 +40,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (!self.dotView)
+    {
+        [self setInitialConfiguration];
+        [self.view addSubview:self.dotView];
+        self.dotView.center = CGPointMake(1, 1);
+    }
+    CGPoint startPosition = CGPointMake(self.view.center.x, self.view.center.y);
+    [self startAtLocation:startPosition];
 
-    
-    // Do any additional setup after loading the view.
 }
-
+- (void) setInitialConfiguration
+{
+    self.dotSize = CGPointMake(20,20);
+    // initial location of the dot in the center of the view
+    CGPoint startPosition = CGPointMake(self.view.center.x, self.view.center.y);
+    self.dotLocation = startPosition;
+    
+    CGRect dotViewFrame = CGRectMake(self.dotLocation.x,self.dotLocation.y,20,20);
+    
+    self.dotView = [[UIView alloc] initWithFrame:dotViewFrame];
+    self.dotView.backgroundColor = [UIColor blackColor];
+    
+}
 
 -(void)startAtLocation:(CGPoint)initialPosition
 {
@@ -57,6 +85,7 @@
 
 - (void) update:(NSTimer*)timer
 {
+
     // score ++
 }
 
@@ -68,6 +97,7 @@
     
     NSLog(@"touches began. TOUCH LOCATION (x,y) = (%f,%f)",touchLocation.x, touchLocation.y);
     
+    // check if the user tapped on a 50x50 area where the dot was present
     if (abs(touchLocation.x-self.dotView.center.x)<50 && (abs(touchLocation.y-self.dotView.center.y)))
     {
         NSLog(@"user tapped within the range of the circle");
@@ -77,17 +107,20 @@
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches Ended");
-    NSTimer *timer = [NSTimer timerWithTimeInterval:8 target:self selector:@selector(update:) userInfo:nil repeats:NO];
-    
+    // give the user ten seconds to respond. if the user gets a certain score, they move on. If they dont respond within 20 seconds, alarm sound continues and score resets.
+    /*
+    NSTimer *timer = [NSTimer timerWithTimeInterval:10 target:self selector:@selector(update:) userInfo:nil repeats:NO];
+    */
+    NSLog(@"%s",__func__);
 }
 -(void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    NSLog(@"%s",__func__);
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    NSLog(@"%s",__func__);
 }
 /*
 #pragma mark - Navigation
