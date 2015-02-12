@@ -9,13 +9,31 @@
 #import "GameTwoViewController.h"
 
 @interface GameTwoViewController ()
+@property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
 
 @end
 
 @implementation GameTwoViewController
+- (IBAction)offButton:(id)sender {
+
+[self dismissViewControllerAnimated:YES completion:nil];
+
+[[UIApplication sharedApplication]cancelAllLocalNotifications];
+    
+}
+
+
+-(BOOL)gameStatus:(SetAlarmViewController *)setAlarmViewController {
+    
+    return YES;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 

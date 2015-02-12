@@ -19,15 +19,19 @@
 @property (nonatomic, strong) NSDate * fireDate;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 
+@property (nonatomic, copy) NSArray * notificationsArray;
+
 
 @end
 
 @implementation SetAlarmViewController
 
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     [self.fetchedResultsController performFetch:nil];
+    
 }
 
 - (NSManagedObjectContext*)managedObjectContext
@@ -151,7 +155,7 @@
     localNotification.alertBody = alarm.alertBody;
     localNotification.soundName = alarm.soundName;
     localNotification.applicationIconBadgeNumber = 1;
-    localNotification.repeatInterval = 0;
+    localNotification.repeatInterval = NSCalendarUnitMinute;
     alarm.localNotification = [NSKeyedArchiver archivedDataWithRootObject:localNotification];
     if ([[CoreDataStack defaultStack] saveContextWithError:nil])
     {
@@ -206,7 +210,7 @@
     
     id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
     NSUInteger numberOfObjects = [sectionInfo numberOfObjects];
-    NSLog(@"numberOfObjects: %ld",numberOfObjects);
+    NSLog(@"numberOfObjects: %ld",(unsigned long)numberOfObjects);
     return numberOfObjects;
     
 }

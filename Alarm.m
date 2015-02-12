@@ -17,4 +17,23 @@
 @dynamic soundName;
 @dynamic localNotification;
 
+
+
+//    
+//    
+//    if([self.delegate gameStatus:self]) {
+//        
+//        self.notificationsArray = [[UIApplication sharedApplication]scheduledLocalNotifications];
+//        
+//        NSMutableArray * mutableNofticationsArray = [self.notificationsArray mutableCopy];
+//        
+//        [mutableNofticationsArray removeObjectAtIndex:0];
+//        
+//        self.notificationsArray = mutableNofticationsArray;
+//        
+//        
+//        // turn off alarm
+//        
+
+
 @end

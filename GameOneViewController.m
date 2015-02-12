@@ -8,21 +8,27 @@
 
 #import "GameOneViewController.h"
 
-@interface GameOneViewController ()
 
+@interface GameOneViewController ()
+@property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
 @end
 
 @implementation GameOneViewController
+- (IBAction)offButton:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [[UIApplication sharedApplication]cancelAllLocalNotifications];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+    
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

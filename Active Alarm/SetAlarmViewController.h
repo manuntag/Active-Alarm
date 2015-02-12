@@ -7,11 +7,21 @@
 //
 #import <UIKit/UIKit.h>
 #import "CoreDataStack.h"
+#import "Alarm.h"
+
+@class SetAlarmViewController;
+//@protocol gameStatusProtocol <NSObject>
+//
+//-(BOOL)gameStatus:(Alarm*)Alarm;
+//
+//@end
 
 
 @interface SetAlarmViewController : UIViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+
 
 @end

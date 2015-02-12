@@ -29,11 +29,13 @@
     
     [self updateCurrentTime];
     
-//    Alarm * alarm = [[Alarm alloc]init];
-    
     self.gamesArray = [[NSMutableArray alloc]init];
     
-    [self loadGames];    
+    [self loadGames];
+    
+    
+    
+    
 }
 
 
@@ -72,9 +74,6 @@
 
 
 #pragma mark - Navigation
-
-
-
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
