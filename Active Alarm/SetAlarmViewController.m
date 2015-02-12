@@ -122,7 +122,7 @@
     
     
 }
-
+/*
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     switch (type) {
         case NSFetchedResultsChangeInsert:
@@ -134,7 +134,7 @@
             return;
     }
 }
-
+*/
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];

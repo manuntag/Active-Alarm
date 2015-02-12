@@ -26,6 +26,8 @@
 		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
 		9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A7971A88B5B3004F7B9C /* WeatherData.m */; };
 		9F44A82B1A8AEBA1004F7B9C /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */; };
+		9F44A82E1A8AEC9E004F7B9C /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A82D1A8AEC9E004F7B9C /* Alarm.m */; };
+		9F44A8361A8B4B8D004F7B9C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F44A8351A8B4B8D004F7B9C /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,9 @@
 		9F44A7971A88B5B3004F7B9C /* WeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherData.m; sourceTree = "<group>"; };
 		9F44A8291A8AEBA1004F7B9C /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		9F44A82C1A8AEC9E004F7B9C /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		9F44A82D1A8AEC9E004F7B9C /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		9F44A8351A8B4B8D004F7B9C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F44A8361A8B4B8D004F7B9C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,7 @@
 		8A0C44781A88656600AF8CAE = {
 			isa = PBXGroup;
 			children = (
+				9F44A8351A8B4B8D004F7B9C /* CoreGraphics.framework */,
 				8A020FF81A8B0B4D00CA97E1 /* Game.h */,
 				8A020FF91A8B0B4D00CA97E1 /* Game.m */,
 				8A020FFB1A8B0B7000CA97E1 /* DotGame.h */,
@@ -447,7 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Active Alarm/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -458,7 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Active Alarm/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
