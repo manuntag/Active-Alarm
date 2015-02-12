@@ -10,11 +10,13 @@
 
 @implementation Game
 
+
 -(instancetype)initWithGameType:(NSString*)gameType {
     
     if (self = [super init]) {
         
         _gameType = gameType;
+        
         
     }
     

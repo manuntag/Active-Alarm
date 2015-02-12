@@ -14,7 +14,7 @@
 @interface GameOneViewController : UIViewController <GameViewControllerType>
 
 @property (nonatomic, strong) Game *game;
-
+@property (nonatomic, strong) NSTimer *responseTimer;
 
 @end
 

@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+static int score = 0;
+
 @interface Game : NSObject
+
 @property (nonatomic, strong) NSString *gameType;
-@property (nonatomic) NSNumber * score;
+@property (nonatomic) NSInteger * score;
 
 -(instancetype)initWithGameType:(NSString*)gameType;
 
