@@ -7,14 +7,34 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
-static int score = 0;
+
+typedef NS_ENUM(int, GAMESTATE)
+{
+    uninitialized,
+    running
+} gamestate;
+
+@protocol Game <NSObject>
+
+@optional
+
+- (void)animate;
+
+@end
 
 @interface Game : NSObject
 
 @property (nonatomic, strong) NSString *gameType;
-@property (nonatomic) NSInteger * score;
 
--(instancetype)initWithGameType:(NSString*)gameType;
+@property (nonatomic) NSInteger score;
+
+@property enum GAMESTATE *gameState;
+
+- (instancetype)initWithGameType:(NSString *)gameType;
+
+// Game state stuff
+
 
 @end

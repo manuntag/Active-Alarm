@@ -23,6 +23,7 @@
 		8A0C44B51A8872BF00AF8CAE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44B41A8872BF00AF8CAE /* HomeViewController.m */; };
 		8A5DFB3C1A8A937400B3A99B /* cudi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A5DFB3B1A8A937400B3A99B /* cudi.wav */; };
 		8AC506521A8BEBF5008BF904 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC506511A8BEBF5008BF904 /* Alarm.m */; };
+		9F3EE7201A8D2AD100FD0A55 /* AnimatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EE71F1A8D2AD100FD0A55 /* AnimatedObject.m */; };
 		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
 		9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A7971A88B5B3004F7B9C /* WeatherData.m */; };
 		9F44A82B1A8AEBA1004F7B9C /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */; };
@@ -71,6 +72,8 @@
 		8A5DFB3B1A8A937400B3A99B /* cudi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cudi.wav; sourceTree = "<group>"; };
 		8AC506501A8BEBF5008BF904 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		8AC506511A8BEBF5008BF904 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		9F3EE71E1A8D2AD100FD0A55 /* AnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedObject.h; sourceTree = "<group>"; };
+		9F3EE71F1A8D2AD100FD0A55 /* AnimatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedObject.m; sourceTree = "<group>"; };
 		9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		9F44A7961A88B5B3004F7B9C /* WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherData.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				9F44A8771A8C685D004F7B9C /* circle.png */,
 				8A020FEF1A8B007E00CA97E1 /* GameOneViewController.h */,
 				8A020FF01A8B007E00CA97E1 /* GameOneViewController.m */,
+				9F3EE71E1A8D2AD100FD0A55 /* AnimatedObject.h */,
+				9F3EE71F1A8D2AD100FD0A55 /* AnimatedObject.m */,
 				8A020FF21A8B008C00CA97E1 /* GameTwoViewController.h */,
 				8A020FF31A8B008C00CA97E1 /* GameTwoViewController.m */,
 				8A020FFE1A8B15D600CA97E1 /* GameViewControllerType.h */,
@@ -320,6 +325,7 @@
 			files = (
 				8A020FFA1A8B0B4D00CA97E1 /* Game.m in Sources */,
 				8AC506521A8BEBF5008BF904 /* Alarm.m in Sources */,
+				9F3EE7201A8D2AD100FD0A55 /* AnimatedObject.m in Sources */,
 				8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */,
 				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,

@@ -6,22 +6,29 @@
 /// if user has not responded with a tap in a correct location of the object then it is assumed that the user fell back asleep and the notification/sound/alarm will continue until the attention test has been passed
 
 #import "GameOneViewController.h"
+//#import "AnimatedObject.h"
 
+const NSInteger passingScore1 = 3;
 
 @interface GameOneViewController ()
 
 @property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
+
+@property (nonatomic, strong) UIView *dotView;
+@property (nonatomic) CGPoint dotLocation;
+//@property (nonatomic) CGPoint dotSize;
 
 @property (nonatomic) CGRect dotViewFrame;
-@property (nonatomic, strong) UIView *dotView;
+@property (nonatomic) CGRect dotFrame;
+//@property (nonatomic) CGRect current;
 
-//@property (nonatomic) CGRect dotFrame;
-@property (nonatomic) CGPoint dotLocation;
-@property (nonatomic) CGPoint dotSize;
-@property (nonatomic) CGRect current;
+@property CGFloat dotWidth;
+@property CGFloat dotHeight;
 
 @property CGFloat xVelocity;
 @property CGFloat yVelocity;
+
 @end
 
 @implementation GameOneViewController
@@ -31,6 +38,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     [[UIApplication sharedApplication]cancelAllLocalNotifications];
+}
+
+- (void) updateScoreLabel1
+{
+    self.scoreLabel1.text = [NSString stringWithFormat:@"SCORE: %ld", (long)self.game.score];
 }
 
 - (void)viewDidLoad {
@@ -49,9 +61,10 @@
     // Put the dot in a random location
     self.dotView.center = [self randomLocation];
     
-    self.xVelocity = 10;
-    self.yVelocity = 10;
-
+    self.xVelocity = 5;
+    self.yVelocity = 5;
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -60,6 +73,7 @@
     // Begin animating the dot
     [self moveDot];
 }
+
 - (void) setInitialConfiguration
 {
     //self.dotSize = CGPointMake(50,50);
@@ -74,13 +88,16 @@
     
 }
 
+/// inherit
 -(CGPoint)randomLocation
 {
     CGFloat xrand = arc4random_uniform(self.view.bounds.size.width);
     CGFloat yrand = arc4random_uniform(self.view.bounds.size.height);
     return CGPointMake(xrand, yrand);
 }
+///
 
+/// override
 -(void)moveDot
 {
     [UIView animateWithDuration:0.00001
@@ -121,36 +138,39 @@
                      }];
 }
 
-- (void) update:(NSTimer*)timer
-{
-
-    // score ++
-}
-
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
     UITouch *myTouch = [[touches allObjects] objectAtIndex:0];
     CGPoint touchLocation = [myTouch locationInView:self.view];
     
-    NSLog(@"touches began. TOUCH LOCATION (x,y) = (%f,%f)",touchLocation.x, touchLocation.y);
+    NSLog(@"touchLocation: (x=%f,y=%f)", touchLocation.x, touchLocation.y);
     NSLog(@"dot location: %f, %f",self.dotView.center.x, self.dotView.center.y );
-
-    // check if the user tapped on a 50x50 area where the dot was present
-    if (abs(touchLocation.x - self.dotView.center.x) < 50 &&
-       (abs(touchLocation.y - self.dotView.center.y) < 50))
+    
+    //abs(touchLocation.x - self.dotView.center.x) < self.view.frame.size.width
+    
+    // check if the user tapped within the area of the dot
+    // it can be caught if the touch location is +- width from the center location
+    if (abs(touchLocation.x - self.dotView.center.x) <= 50 &&
+       (abs(touchLocation.y - self.dotView.center.y) <= 50))
     {
         NSLog(@"user tapped within the range of the circle");
-        //score ++;
+        // useer gets a point if they catch the dot
+        self.game.score++;
+        [self updateScoreLabel1];
+        NSLog(@"%ld", (long)self.game.score);
+        
+        // next: update the UI when score is updated.
+        if (self.game.score == 3)
+        {
+            NSLog(@"user has passed");
+        }
+        
     }
 }
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches Ended");
-    // give the user ten seconds to respond. if the user gets a certain score, they move on. If they dont respond within 10 seconds, alarm sound continues and score resets.
-    /*
-    NSTimer *timer = [NSTimer timerWithTimeInterval:10 target:self selector:@selector(update:) userInfo:nil repeats:NO];
-    */
+    
     NSLog(@"%s",__func__);
 }
 -(void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -162,6 +182,8 @@
 {
     NSLog(@"%s",__func__);
 }
+
+
 /*
 #pragma mark - Navigation
 

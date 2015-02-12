@@ -6,9 +6,11 @@
 
 #import "GameTwoViewController.h"
 
+const NSInteger passingScore = 10;
+
 @interface GameTwoViewController ()
 
-//@property (nonatomic, strong) DotGameView *gameView;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @property (nonatomic, strong) UIImageView *dotImageView;
 @property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
@@ -27,6 +29,11 @@
     
 }
 
+- (void) updateScoreLabel
+{
+    self.scoreLabel.text = [NSString stringWithFormat:@"SCORE: %ld", (long)self.game.score];
+}
+
 
 -(BOOL)gameStatus:(SetAlarmViewController *)setAlarmViewController {
     
@@ -35,18 +42,18 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    //CGPoint startPosition = CGPointMake(self.view.center.x, self.view.center.y);
-    //self.dot = [[Dot alloc] initWithLocation:[self randomPoint]];
-    if (!self.dotImageView) [self setUpView];
-    //[self animationLoop];
+
+    if (!self.dotImageView)
+        [self setUpView];
+    
+    [self startGame];
 }
 
 
-- (void) setUpView
+- (void)setUpView
 {
-    // Location of the center of the dot in the view.
-    self.dotImageView = [[UIImageView alloc] initWithFrame:CGRectMake([self randomPoint].x, [self randomPoint].y, 80, 80)];
+    // Get the circle to show up at a random location on the view.
+    self.dotImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.randomPoint.x, self.randomPoint.y, 80, 80)];
     self.dotImageView.image = [UIImage imageNamed:@"circle"];
     [self.view addSubview:self.dotImageView];
 
@@ -69,15 +76,17 @@
 
 - (void) startGame
 {
-    //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(update:) userInfo:nil repeats:YES];
+    gamestate = running;
+    
+    // show a circle at every 5 second interval
+    
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(update:) userInfo:nil repeats:YES];
 
 }
 
 - (void) update:(NSTimer*)timer
 {
     [self setDotToRandomPoint];
-    // gamescore++
-    
 }
 
 
@@ -87,6 +96,23 @@
     UITouch *myTouch = [[touches allObjects] objectAtIndex:0];
     CGPoint touchLocation = [myTouch locationInView:self.view];
     NSLog(@"touches began. TOUCH LOCATION (x,y) = (%f,%f)",touchLocation.x, touchLocation.y);
+    
+    if (abs(touchLocation.x - self.dotImageView.center.x) <= 50 &&
+        (abs(touchLocation.y - self.dotImageView.center.y) <= 50))
+    {
+        NSLog(@"user tapped within the range of the circle");
+        // useer gets a point if they catch the dot
+        self.game.score++;
+        [self updateScoreLabel];
+        NSLog(@"%ld", self.game.score);
+        // next: update the UI when score is changed
+    }
+    
+    if (self.game.score == passingScore)
+    {
+        // move on to the next game.
+        NSLog(@"user has passed");
+    }
     
 }
 

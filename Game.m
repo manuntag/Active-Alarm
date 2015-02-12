@@ -11,18 +11,35 @@
 @implementation Game
 
 
--(instancetype)initWithGameType:(NSString*)gameType {
+-(instancetype)initWithGameType:(NSString *)gameType {
     
     if (self = [super init]) {
         
         _gameType = gameType;
-        
-        
     }
-    
     return self;
-    
 }
+/*
+- (instancetype) initWithGameType:(NSString *)gameType andCurrentScore:(NSInteger *)score
+{
+    if (self = [super init]) {
+        
+        _gameType = gameType;
+        self.score = score;
+    }
+    return self;
+
+}
+*/
+/*
+-(CGPoint)randomLocation
+{
+    CGFloat xrand = arc4random_uniform(self.view.bounds.size.width);
+    CGFloat yrand = arc4random_uniform(self.view.bounds.size.height);
+    return CGPointMake(xrand, yrand);
+}
+*/
+
 
 
 @end
