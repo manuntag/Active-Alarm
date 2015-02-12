@@ -30,7 +30,7 @@
     if (checkAnswer) {
         
         self.mathgame.userScore++;
-        self.userScoreLabel.text = [NSString stringWithFormat:@"%d", self.mathgame.userScore];
+        self.userScoreLabel.text = [NSString stringWithFormat:@"%d/3", self.mathgame.userScore];
         self.userAnswerTextField.text = @"";
         self.mathgame.answer = [self.mathgame randomMathQuestion];
         self.mathQuestionLabel.text = self.mathgame.mathQuestion;

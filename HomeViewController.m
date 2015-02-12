@@ -46,7 +46,7 @@
   }];
     
     
-    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(goToMath) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(goToMath) userInfo:nil repeats:NO];
     
 }
 
