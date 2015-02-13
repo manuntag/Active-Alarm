@@ -23,11 +23,11 @@ const NSInteger passingScore1 = 3;
 @property (nonatomic) CGRect dotFrame;
 //@property (nonatomic) CGRect current;
 
-@property CGFloat dotWidth;
-@property CGFloat dotHeight;
+@property (nonatomic) CGFloat dotWidth;
+@property (nonatomic) CGFloat dotHeight;
 
-@property CGFloat xVelocity;
-@property CGFloat yVelocity;
+@property (nonatomic) CGFloat xVelocity;
+@property (nonatomic) CGFloat yVelocity;
 
 @end
 
@@ -35,9 +35,18 @@ const NSInteger passingScore1 = 3;
 
 - (IBAction)offButton:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"off pressed \n \n \n /n /n /n ");
+    [self performSelectorOnMainThread:@selector(stopAnimation) withObject:self waitUntilDone:NO];
     
     [[UIApplication sharedApplication]cancelAllLocalNotifications];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void)stopAnimation {
+    NSLog(@"renmoved anim");
+    [self.view.layer removeAllAnimations];
 }
 
 - (void) updateScoreLabel1
@@ -59,12 +68,10 @@ const NSInteger passingScore1 = 3;
 //    CGPoint startPosition = CGPointMake(self.view.center.x, self.view.center.y);
     
     // Put the dot in a random location
-    self.dotView.center = [self randomLocation];
-    
+    CGAffineTransform transform =CGAffineTransformMakeTranslation(1, 1);
+    transform = self.dotView.transform;
     self.xVelocity = 5;
     self.yVelocity = 5;
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -72,6 +79,11 @@ const NSInteger passingScore1 = 3;
     [super viewDidAppear:animated];
     // Begin animating the dot
     [self moveDot];
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"disappear");
+    
 }
 
 - (void) setInitialConfiguration
@@ -100,14 +112,17 @@ const NSInteger passingScore1 = 3;
 /// override
 -(void)moveDot
 {
-    [UIView animateWithDuration:0.00001
+    [UIView animateWithDuration:0.001
                           delay:0
                         options:UIViewAnimationCurveLinear |UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
 
                          // Move the dot to a new position
                          CGFloat newX = self.dotView.center.x + self.xVelocity;
+                         NSLog(@"%f",newX);
+                         
                          CGFloat newY = self.dotView.center.y + self.yVelocity;
+                         
                          
                          // Check if new location is within bounds
                          if(newX >= self.view.bounds.size.width) {
@@ -130,7 +145,8 @@ const NSInteger passingScore1 = 3;
                          
                          self.dotView.center = CGPointMake(newX, newY);
                          
-                         
+                         NSLog(@"%f xVelocity", self.xVelocity);
+
                      }
                      completion:^(BOOL finished) {
                          // Trigger the next animation

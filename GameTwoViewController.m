@@ -12,10 +12,9 @@ const NSInteger passingScore = 10;
 
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
-@property (nonatomic, strong) UIImageView *dotImageView;
-@property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
+@property (nonatomic, strong) UIImageView *dotView;
 
-//@property (nonatomic, strong) Dot *dot;
+@property (nonatomic, strong) SetAlarmViewController * setAlarmViewController;
 
 @end
 
@@ -40,72 +39,66 @@ const NSInteger passingScore = 10;
     return YES;
     
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    if (!self.dotImageView)
-        [self setUpView];
-    
+    // Do any additional setup after loading the view, typically from a nib.
+    [self setUpView];
     [self startGame];
 }
 
-
 - (void)setUpView
 {
+    self.dotView.clipsToBounds = YES;
     // Get the circle to show up at a random location on the view.
-    self.dotImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.randomPoint.x, self.randomPoint.y, 80, 80)];
-    self.dotImageView.image = [UIImage imageNamed:@"circle"];
-    [self.view addSubview:self.dotImageView];
+    self.dotView = [[UIImageView alloc] initWithFrame:CGRectMake(100,100,60,60)];
+    self.dotView.image = [UIImage imageNamed:@"circle"];
+    [self.view addSubview:self.dotView];
 
-}
-
-- (void) setDotToRandomPoint
-{
-    CGFloat x = [self randomPoint].x;
-    CGFloat y = [self randomPoint].y;
-    self.dotImageView.center = CGPointMake(x,y);
-}
-
-- (CGPoint) randomPoint
-{
-    CGFloat xrand = arc4random_uniform(self.view.bounds.size.width-self.dotImageView.frame.size.width);
-    CGFloat yrand = arc4random_uniform(self.view.bounds.size.height-self.dotImageView.frame.size.width);
-    
-    return CGPointMake(xrand, yrand);
 }
 
 - (void) startGame
 {
-    gamestate = running;
-    
-    // show a circle at every 5 second interval
-    
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(update:) userInfo:nil repeats:YES];
-
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(update:) userInfo:nil repeats:YES];
 }
-
 - (void) update:(NSTimer*)timer
 {
-    [self setDotToRandomPoint];
+    
+    //self.dotView.clipsToBounds = YES;
+    //self.dotView.hidden = YES;
+    self.dotView.center= CGPointMake(self.randomLocation.x, self.randomLocation.y);
+    
+    self.dotView.hidden = NO;
+    // invalidate timer if score is 5.
+}
+
+- (CGPoint) randomLocation
+{
+    CGFloat xrand = arc4random_uniform(self.view.frame.size.width - self.dotView.frame.size.width);
+    CGFloat yrand = arc4random_uniform(self.view.frame.size.height-self.dotView.frame.size.height);
+    NSLog(@"~~~~~~~~ X = %f ~~~~~~~~ Y = %f ~~~~~~~~~ ", xrand, yrand);
+    return CGPointMake(xrand, yrand);
 }
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
     UITouch *myTouch = [[touches allObjects] objectAtIndex:0];
-    CGPoint touchLocation = [myTouch locationInView:self.view];
-    NSLog(@"touches began. TOUCH LOCATION (x,y) = (%f,%f)",touchLocation.x, touchLocation.y);
+    CGPoint touchPoint = [myTouch locationInView:self.view];
     
-    if (abs(touchLocation.x - self.dotImageView.center.x) <= 50 &&
-        (abs(touchLocation.y - self.dotImageView.center.y) <= 50))
+    NSLog(@"touches began. TOUCH LOCATION (x,y) = (%f,%f)",touchPoint.x, touchPoint.y);
+    
+    // check if user touched the moving circle
+    if (CGRectContainsPoint(self.dotView.frame, touchPoint))
     {
-        NSLog(@"user tapped within the range of the circle");
-        // useer gets a point if they catch the dot
+        self.dotView.clipsToBounds = YES;
+        //  increment number of successfully tapped on objets in the view
         self.game.score++;
         [self updateScoreLabel];
-        NSLog(@"%ld", self.game.score);
-        // next: update the UI when score is changed
+        // set.tapSuccessCount++;
+        //[self growAnimationForView:self.dotView];
+        //[self shrinkAnimationForView:self.dotView];
+        [self animateTouchAtPoint:touchPoint];
     }
     
     if (self.game.score == passingScore)
@@ -113,33 +106,63 @@ const NSInteger passingScore = 10;
         // move on to the next game.
         NSLog(@"user has passed");
     }
-    
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    
-    
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:<#(SEL)#> userInfo:nil repeats:NO]
+}
+
+/*
+- (CGPoint) randomLocation
+{
+    CGFloat xrand = arc4random_uniform(self.view.frame.size.width);
+    CGFloat yrand = arc4random_uniform(self.view.frame.size.height);
+    NSLog(@"~~~~~~~~ X = %f ~~~~~~~~ Y = %f ~~~~~~~~~ ", xrand, yrand);
+    return CGPointMake(xrand, yrand);
+}
+*/
+- (void)animateTouchAtPoint:(CGPoint)touchPoint {
+#define SCALE_FACTOR 2.0f
+#define ANIMATION_DURATION_SECONDS 1.0
+    
+    NSLog(@"start animation blocks");
+    [UIView animateWithDuration:ANIMATION_DURATION_SECONDS
+                     animations:^{
+                         NSLog(@"animation block 1");
+                         //self.dotView.clipsToBounds = YES;
+                         CGAffineTransform transform = CGAffineTransformMakeScale(SCALE_FACTOR, SCALE_FACTOR);
+                         //CGAffineTransform translation =CGAffineTransformMakeTranslation(self.randomLocation.x, self.randomLocation.y);
+                         self.dotView.transform = transform;
+                         //self.dotView.transform = translation;
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:(NSTimeInterval)ANIMATION_DURATION_SECONDS animations:^{
+                             
+                             NSLog(@"animation block 2");
+                             
+                             self.dotView.transform = CGAffineTransformMakeScale(0,0);
+                             self.dotView.transform =
+                             CGAffineTransformIdentity;
+                         }];
+                         
+                     }];
+    
+    [UIView animateWithDuration:(NSTimeInterval)ANIMATION_DURATION_SECONDS animations:^{
+        self.dotView.clipsToBounds = YES;
+        NSLog(@"animation block 3");
+        self.dotView.hidden = YES;
+        //self.dotView.transform = CGAffineTransformIdentity;
+        
+    }];
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 @end

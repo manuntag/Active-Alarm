@@ -12,4 +12,5 @@
 
 @interface GameTwoViewController : UIViewController <GameViewControllerType>
 @property (nonatomic, strong) Game *game;
+@property NSTimer *timer;
 @end

@@ -5,10 +5,11 @@
 //  Created by Veronica Baldys on 2015-02-12.
 //  Copyright (c) 2015 David Manuntag. All rights reserved.
 //
-
+*/
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
+@protocol AnimatedObject
 
 @interface AnimatedObject : UIView
 {
@@ -30,3 +31,4 @@
 
 
 @end
+*/
