@@ -27,12 +27,21 @@
 @implementation SetAlarmViewController
 
 
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     [self.fetchedResultsController performFetch:nil];
     
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self.textField resignFirstResponder];
+    
+    
+}
+
 
 - (NSManagedObjectContext*)managedObjectContext
 {
@@ -191,7 +200,7 @@
     
     alarm.fireDate = self.fireDate;
     alarm.alertBody = [self.textField text];
-    alarm.soundName = @"cudi.wav";
+    alarm.soundName = @"lupe.wav";
     
 
     NSError *error = nil;

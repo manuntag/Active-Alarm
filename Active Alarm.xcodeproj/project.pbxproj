@@ -23,9 +23,11 @@
 		8A0C44B51A8872BF00AF8CAE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C44B41A8872BF00AF8CAE /* HomeViewController.m */; };
 		8A5918BE1A8C56AD00BEB287 /* MathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5918BD1A8C56AD00BEB287 /* MathViewController.m */; };
 		8A5918C11A8C621C00BEB287 /* PushUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5918C01A8C621C00BEB287 /* PushUpViewController.m */; };
-		8A5918C31A8C6A3400BEB287 /* push_up_T.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5918C21A8C6A3400BEB287 /* push_up_T.png */; };
 		8A5DFB3C1A8A937400B3A99B /* cudi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A5DFB3B1A8A937400B3A99B /* cudi.wav */; };
 		8AC506521A8BEBF5008BF904 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC506511A8BEBF5008BF904 /* Alarm.m */; };
+		8ACEBFED1A8D2A73008B5AFE /* WaldoGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACEBFEC1A8D2A73008B5AFE /* WaldoGame.m */; };
+		8ACEBFF01A8D2CC9008B5AFE /* WaldoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACEBFEF1A8D2CC9008B5AFE /* WaldoViewController.m */; };
+		8ACEBFF61A8DA464008B5AFE /* lupe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8ACEBFF51A8DA464008B5AFE /* lupe.wav */; };
 		9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */; };
 		9F44A7981A88B5B3004F7B9C /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A7971A88B5B3004F7B9C /* WeatherData.m */; };
 		9F44A82B1A8AEBA1004F7B9C /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44A82A1A8AEBA1004F7B9C /* CoreDataStack.m */; };
@@ -74,10 +76,14 @@
 		8A5918BD1A8C56AD00BEB287 /* MathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathViewController.m; sourceTree = "<group>"; };
 		8A5918BF1A8C621C00BEB287 /* PushUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushUpViewController.h; sourceTree = "<group>"; };
 		8A5918C01A8C621C00BEB287 /* PushUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushUpViewController.m; sourceTree = "<group>"; };
-		8A5918C21A8C6A3400BEB287 /* push_up_T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = push_up_T.png; sourceTree = "<group>"; };
-		8A5DFB3B1A8A937400B3A99B /* cudi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cudi.wav; sourceTree = "<group>"; };
+		8A5DFB3B1A8A937400B3A99B /* cudi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cudi.wav; path = ../cudi.wav; sourceTree = "<group>"; };
 		8AC506501A8BEBF5008BF904 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		8AC506511A8BEBF5008BF904 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		8ACEBFEB1A8D2A73008B5AFE /* WaldoGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaldoGame.h; sourceTree = "<group>"; };
+		8ACEBFEC1A8D2A73008B5AFE /* WaldoGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaldoGame.m; sourceTree = "<group>"; };
+		8ACEBFEE1A8D2CC9008B5AFE /* WaldoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaldoViewController.h; sourceTree = "<group>"; };
+		8ACEBFEF1A8D2CC9008B5AFE /* WaldoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaldoViewController.m; sourceTree = "<group>"; };
+		8ACEBFF51A8DA464008B5AFE /* lupe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = lupe.wav; path = ../lupe.wav; sourceTree = "<group>"; };
 		9F44A78D1A8869AC004F7B9C /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		9F44A78E1A8869AC004F7B9C /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		9F44A7961A88B5B3004F7B9C /* WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherData.h; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 				8A5918BD1A8C56AD00BEB287 /* MathViewController.m */,
 				8A5918BF1A8C621C00BEB287 /* PushUpViewController.h */,
 				8A5918C01A8C621C00BEB287 /* PushUpViewController.m */,
+				8ACEBFEE1A8D2CC9008B5AFE /* WaldoViewController.h */,
+				8ACEBFEF1A8D2CC9008B5AFE /* WaldoViewController.m */,
 			);
 			name = Challenges;
 			sourceTree = "<group>";
@@ -125,7 +133,7 @@
 		8A0C44781A88656600AF8CAE = {
 			isa = PBXGroup;
 			children = (
-				8A5918C21A8C6A3400BEB287 /* push_up_T.png */,
+				8A0C44911A88656600AF8CAE /* Main.storyboard */,
 				9F44A8351A8B4B8D004F7B9C /* CoreGraphics.framework */,
 				8A020FF81A8B0B4D00CA97E1 /* Game.h */,
 				8A020FF91A8B0B4D00CA97E1 /* Game.m */,
@@ -133,9 +141,9 @@
 				8A020FFC1A8B0B7000CA97E1 /* DotGame.m */,
 				8A020FF51A8B0AF900CA97E1 /* MathGame.h */,
 				8A020FF61A8B0AF900CA97E1 /* MathGame.m */,
+				8ACEBFEB1A8D2A73008B5AFE /* WaldoGame.h */,
+				8ACEBFEC1A8D2A73008B5AFE /* WaldoGame.m */,
 				8A020FEE1A8B005B00CA97E1 /* Challenges */,
-				8A5DFB3B1A8A937400B3A99B /* cudi.wav */,
-				8A0C44911A88656600AF8CAE /* Main.storyboard */,
 				8A0C44B21A88728C00AF8CAE /* Home */,
 				8A0C44AE1A88676F00AF8CAE /* Weather */,
 				8A0C44AD1A88676600AF8CAE /* Core Data */,
@@ -167,6 +175,8 @@
 		8A0C44841A88656600AF8CAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8ACEBFF51A8DA464008B5AFE /* lupe.wav */,
+				8A5DFB3B1A8A937400B3A99B /* cudi.wav */,
 				8A0C44941A88656600AF8CAE /* Images.xcassets */,
 				8A0C44961A88656600AF8CAE /* LaunchScreen.xib */,
 				8A0C44881A88656600AF8CAE /* AppDelegate.h */,
@@ -306,8 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ACEBFF61A8DA464008B5AFE /* lupe.wav in Resources */,
 				8A0C44931A88656600AF8CAE /* Main.storyboard in Resources */,
-				8A5918C31A8C6A3400BEB287 /* push_up_T.png in Resources */,
 				8A5DFB3C1A8A937400B3A99B /* cudi.wav in Resources */,
 				8A0C44981A88656600AF8CAE /* LaunchScreen.xib in Resources */,
 				8A0C44951A88656600AF8CAE /* Images.xcassets in Resources */,
@@ -330,9 +340,11 @@
 			files = (
 				8A020FFA1A8B0B4D00CA97E1 /* Game.m in Sources */,
 				8AC506521A8BEBF5008BF904 /* Alarm.m in Sources */,
+				8ACEBFF01A8D2CC9008B5AFE /* WaldoViewController.m in Sources */,
 				8A0C448D1A88656600AF8CAE /* Active_Alarm.xcdatamodeld in Sources */,
 				9F44A78F1A8869AC004F7B9C /* WeatherViewController.m in Sources */,
 				8A0C448A1A88656600AF8CAE /* AppDelegate.m in Sources */,
+				8ACEBFED1A8D2A73008B5AFE /* WaldoGame.m in Sources */,
 				8A5918C11A8C621C00BEB287 /* PushUpViewController.m in Sources */,
 				8A020FF41A8B008C00CA97E1 /* GameTwoViewController.m in Sources */,
 				8A020FF71A8B0AF900CA97E1 /* MathGame.m in Sources */,

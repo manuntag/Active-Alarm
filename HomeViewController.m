@@ -32,18 +32,19 @@
 
 @implementation HomeViewController
 
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+
+}
+
 
 -(void)slideToRightWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
     
-    
   [UIView animateWithDuration:3.0 animations:^{
       
-      
       self.blueSwipeView.frame = CGRectOffset(self.blueSwipeView.frame, 320.0, 0);
-//      self.greenSwipeView.frame = CGRectOffset(self.greenSwipeView.frame, 320.0, 0);
-      
-      
+
   }];
+  
     
     
     [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(goToMath) userInfo:nil repeats:NO];
@@ -54,9 +55,13 @@
          
          [self performSegueWithIdentifier:@"mathSegue" sender:self];
          
+         [UIView animateWithDuration:3.0 animations:^{
+             
+             self.blueSwipeView.frame = CGRectOffset(self.blueSwipeView.frame, -320.0, 0);
+         }];
+
+         
      }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
