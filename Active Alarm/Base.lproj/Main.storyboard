@@ -440,7 +440,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.18668797610000001" green="0.76294732089999995" blue="0.7047269344" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0041623460130000003" green="0.61644637579999995" blue="0.63907027240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ety-Wb-bMG" firstAttribute="bottom" secondItem="Umx-aC-SeT" secondAttribute="top" id="5So-vb-kjv"/>
                             <constraint firstItem="7m4-yl-2bR" firstAttribute="trailing" secondItem="n92-l2-z6W" secondAttribute="trailingMargin" id="7Pw-zM-p5Y"/>
